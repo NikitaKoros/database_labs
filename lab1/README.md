@@ -24,6 +24,8 @@
 
 Исходный код: [`scripts/er_diagram.puml`](scripts/er_diagram.puml)
 
+![Visual Diagram](images/diagram2.png)
+
 ---
 
 ## Модель данных
