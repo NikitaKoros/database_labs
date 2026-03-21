@@ -18,6 +18,18 @@
 
 ---
 
+## Запуск
+
+```bash
+docker compose up -d
+
+docker exec -it lab1_postgres psql -U postgres -d rental_db
+
+docker compose down
+```
+
+---
+
 ## ER-диаграмма
 
 ![ER Diagram](images/diagram.png)
