@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16
+    container_name: lab2_postgres
+    environment:
+      POSTGRES_DB: rental_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./scripts/01_DDL.sql:/docker-entrypoint-initdb.d/01_DDL.sql
+      - ./scripts/02_seed.sql:/docker-entrypoint-initdb.d/02_seed.sql
+      - ./scripts/03_DML.sql:/docker-entrypoint-initdb.d/03_DML.sql
+      - ./scripts/04_aggregations.sql:/docker-entrypoint-initdb.d/04_aggregations.sql
+      - ./scripts/05_joins.sql:/docker-entrypoint-initdb.d/05_joins.sql
+      - ./scripts/06_views.sql:/docker-entrypoint-initdb.d/06_views.sql
+      - pgdata_lab2:/var/lib/postgresql/data
+
+volumes:
+  pgdata_lab2:
